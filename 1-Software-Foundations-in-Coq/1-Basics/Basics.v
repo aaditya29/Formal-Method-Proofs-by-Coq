@@ -36,3 +36,30 @@ Inductive day: Type :=
   | friday
   | saturday
   | sunday.
+
+  (*Creating a function on days*)
+  
+  (** 
+    The [next_weekday] function takes a day of the week [d] as input and returns the next weekday.
+    - If the input is [monday], it returns [tuesday].
+    - If the input is [tuesday], it returns [wednesday].
+    - If the input is [wednesday], it returns [thursday].
+    - If the input is [thursday], it returns [friday].
+    - If the input is [friday], it returns [monday].
+    - If the input is [saturday] or [sunday], it returns [monday].
+  *)
+
+  Definition next_weekday (d:day) : day :=
+    match d with
+    | monday => tuesday
+    | tuesday => wednesday
+    | wednesday => thursday
+    | thursday => friday
+    | friday => monday
+    | saturday => monday
+    | sunday => monday
+    end.
+
+(*Using the above function*)
+Compute (next_weekday monday).
+(*Output: monday : day*)
