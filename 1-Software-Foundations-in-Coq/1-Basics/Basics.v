@@ -63,3 +63,10 @@ Inductive day: Type :=
 (*Using the above function*)
 Compute (next_weekday monday).
 (*Output: monday : day*)
+
+(*Now we can check what we are expecting our result to be in the form of a Coq example*)
+Example test_next_weekday:
+  (next_weekday (next_weekday saturday)) = tuesday.
+
+(* We are now giving a proof for giving evidence to our claim *)
+Proof. simpl. reflexivity. Qed.
