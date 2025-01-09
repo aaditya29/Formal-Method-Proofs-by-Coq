@@ -57,3 +57,5 @@ Example test_orb3: (orb false true) = true.
 Proof. simpl. reflexivity. Qed.
 Example test_orb4: (orb true true) = true.
 Proof. simpl. relfexivity. Qed. 
+
+(* Writing new symbolic notiations for the existing definitions. *)
