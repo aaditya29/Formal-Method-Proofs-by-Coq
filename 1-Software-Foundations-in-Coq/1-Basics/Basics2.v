@@ -39,4 +39,21 @@ Definition orb (b1: B) (b2: B) : B :=
     match b1 with
     | true => true(*If b1 is true, the function immediately returns true. *)
     | false => b2
-    end.
+    end. (*If b1 is false, the function returns the value of b2.*)
+
+(*Writing the proof*)
+
+(* Here we are defining series of unit tests for the orb function (logical OR) that was previously defined.*)
+
+(*Here example is used to define a test case with test_orb1 as the name of the test case.*)
+(* `orb true false = true` is the statement we want to prove. It asserts that the result of orb true false (logical OR of true and false) is equal to true.*)
+(* Proof. begins the proof for the test case and `simpl` simplifies the expression by reducing it to its simplest form using the definition of orb.*)
+(* Here Coq will replace (orb true false) with true (based on the definition of orb).*)
+Example test_orb1: (orb true false) = true.
+Proof. simpl. reflexivity. Qed.
+Example test_orb2: (orb false false) = false.
+Proof. simpl. reflexivity. Qed.
+Example test_orb3: (orb false true) = true.
+Proof. simpl. reflexivity. Qed.
+Example test_orb4: (orb true true) = true.
+Proof. simpl. relfexivity. Qed. 
