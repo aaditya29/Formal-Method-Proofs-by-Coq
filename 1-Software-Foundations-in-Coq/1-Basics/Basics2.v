@@ -25,3 +25,18 @@ Definition negb (b:B) : B :=
     | true => false
     | false => true
     end.
+
+(*Defining the function of logical AND*)
+Definition andb (b1: B) (b2: B) : B :=
+    match b1 with
+    | true => b2
+    | false => false
+    end.
+
+(*Defining the function of logical OR*)
+
+Definition orb (b1: B) (b2: B) : B :=
+    match b1 with
+    | true => true(*If b1 is true, the function immediately returns true. *)
+    | false => b2
+    end.
