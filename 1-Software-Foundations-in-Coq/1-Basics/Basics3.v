@@ -28,3 +28,11 @@ Definition monochrome (c : color) : bool :=
     end.
 
 (*finding if the colour is red or not using the pattern matching*)
+Definition isred (c : color) : bool :=
+    match c with
+    | black => false
+    | white => false
+    | primary red => true
+    | primary _ => false
+    end.
+
