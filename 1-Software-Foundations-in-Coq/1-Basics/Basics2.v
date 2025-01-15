@@ -82,4 +82,8 @@ Definition negb (b:B) : B := (* Defining function negb with argument b and Boole
 Definition andb (b1:B) (b2:B): B :=
     if b1 then b2
     else false.
+
+Definition nandb (b1:B) (b2:B): B :=
+    if b1 then (negb b2)
+    else true.
     
