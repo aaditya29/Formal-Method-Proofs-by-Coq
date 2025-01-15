@@ -11,6 +11,12 @@ Inductive bool: Type:=
 | true
 | false.
 
+(** Above function can be also defined as folloing:
+Inductive Bool :=
+| TRUE : Bool
+| FALSE : Bool.
+*)
+
 (*Definiing a new function in the boolean for giving output in negation*)
 (** In `Definition negb (b:B) : B :=` the keyword definition is used to define a function or a constant in Coq.
     `negb` is the name of the function being defined.
