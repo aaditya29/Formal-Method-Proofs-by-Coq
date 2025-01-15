@@ -86,4 +86,15 @@ Definition andb (b1:B) (b2:B): B :=
 Definition nandb (b1:B) (b2:B): B :=
     if b1 then (negb b2)
     else true.
-    
+
+(* Definition of nandb using match*)
+
+Definition nandb (b1:B) (b2:B) : B :=
+    match b1 with
+    | false => true
+    | true =>
+        match b2 with
+        | false => true
+        | true => false
+        end
+    end.
