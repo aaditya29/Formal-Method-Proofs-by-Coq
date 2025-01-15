@@ -26,14 +26,14 @@ Inductive Bool :=
 (** `match b with ... end` uses a match expression to analyze the value of b and return the appropriate result.
     `match` keyword is used for pattern matching in Coq. Pattern matching allows us to "case-analyze" the possible values of a type.
     `b with` specifies that we are matching on the value of b.*)
-Definition negb (b:B) : B := (*negb is a function with argument b of type Bool and output of function is going to be Bool*)
+Definition negb (b:bool) : bool := (*negb is a function with argument b of type Bool and output of function is going to be Bool*)
     match b with
     | true => false
     | false => true
     end.
 
 (*Defining the function of logical AND*)
-Definition andb (b1: B) (b2: B) : B :=
+Definition andb (b1: bool) (b2: bool) : bool :=
     match b1 with
     | true => b2
     | false => false
@@ -41,7 +41,7 @@ Definition andb (b1: B) (b2: B) : B :=
 
 (*Defining the function of logical OR*)
 
-Definition orb (b1: B) (b2: B) : B :=
+Definition orb (b1: bool) (b2: bool) : bool :=
     match b1 with
     | true => true(*If b1 is true, the function immediately returns true. *)
     | false => b2
@@ -81,21 +81,21 @@ Example test_negb2: (~~ false) = true.
 Proof. simpl. reflexivity. Qed.
 
 (* Writing above function with the if expressions*)
-Definition negb (b:B) : B := (* Defining function negb with argument b and Boolean type which returns the Boolean*)
+Definition negb (b:bool) : bool := (* Defining function negb with argument b and Boolean type which returns the Boolean*)
     if b then false
     else true.
 
-Definition andb (b1:B) (b2:B): B :=
+Definition andb (b1:bool) (b2:bool): bool :=
     if b1 then b2
     else false.
 
-Definition nandb (b1:B) (b2:B): B :=
+Definition nandb (b1:bool) (b2:bool): bool :=
     if b1 then (negb b2)
     else true.
 
 (* Definition of nandb using match*)
 
-Definition nandb (b1:B) (b2:B) : B :=
+Definition nandb (b1:bool) (b2:bool) : bool :=
     match b1 with
     | false => true
     | true =>
