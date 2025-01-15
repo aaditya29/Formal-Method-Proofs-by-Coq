@@ -58,12 +58,11 @@ Proof. simpl. reflexivity. Qed.
 Example test_orb4: (orb true true) = true.
 Proof. simpl. relfexivity. Qed. 
 
-(* Writing new symbolic notations for the existing definitions. *)
-(* Writing new symbolic notations for the existing definitions. *)
 
+
+(* Writing new symbolic notations for the existing definitions. *)
 Notation "x && y" := (andb x y).
 Notation "x || y" := (orb x y).
-Notation "~~ x" := (negb x) (at level 75, right associativity).
 
 (* Examples using the new notations *)
 Example test_andb1: (true && false) = false.
@@ -74,3 +73,13 @@ Example test_negb1: (~~ true) = false.
 Proof. simpl. reflexivity. Qed.
 Example test_negb2: (~~ false) = true.
 Proof. simpl. reflexivity. Qed.
+
+(* Writing above function with the if expressions*)
+Definition negb (b:B) : B := (* Defining function negb with argument b and Boolean type which returns the Boolean*)
+    if b then false
+    else true.
+
+Definition andb (b1:B) (b2:B): B :=
+    if b1 then b2
+    else false.
+    
