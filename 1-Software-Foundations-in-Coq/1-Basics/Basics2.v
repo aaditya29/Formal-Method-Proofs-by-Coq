@@ -20,7 +20,7 @@ Inductive bool: Type:=
 (** `match b with ... end` uses a match expression to analyze the value of b and return the appropriate result.
     `match` keyword is used for pattern matching in Coq. Pattern matching allows us to "case-analyze" the possible values of a type.
     `b with` specifies that we are matching on the value of b.*)
-Definition negb (b:B) : B :=
+Definition negb (b:B) : B := (*negb is a function with argument b of type Bool and output of function is going to be Bool*)
     match b with
     | true => false
     | false => true
