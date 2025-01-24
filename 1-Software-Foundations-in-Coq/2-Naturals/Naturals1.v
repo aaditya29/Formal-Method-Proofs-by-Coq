@@ -86,3 +86,17 @@ Check Playground.b : Playground.rgb.
 Check b: B.
 
 (* NUMBERS*)
+Module NatPlayground.
+
+Inductive N: Type :=
+    | O (* O is the predecessor*)
+    | S (n : N). (* S means successor of N*)
+(* In above definition, 0 is represented by [0], 1 by [S 0], 2 by [S (S 0)], and so on.*)
+
+Definition pred (n : N) : N :=
+    match n with
+    | 0 => 0(* predecessor of 0 is 0*)
+    | S n' => n' (* predecessor of S n' is n'*)
+    end.
+End NatPlayground.
+
