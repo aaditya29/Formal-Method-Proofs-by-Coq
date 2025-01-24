@@ -73,3 +73,16 @@
 
     In this example, `Functor` is a parameterized module that takes a module of type `XType` and defines `y` based on `X.x`. `Result` is an instance of `Functor` with `Instance` as its parameter.
 *)
+Module Playground.
+    Inductive rgb := red | green | blue.
+    Definition b : rgb := blue.
+End Playground.
+
+Inductive B := trueB | falseB.
+
+Definition b: B := trueB.
+
+Check Playground.b : Playground.rgb.
+Check b: B.
+
+(* NUMBERS*)
