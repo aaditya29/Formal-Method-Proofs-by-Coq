@@ -21,5 +21,13 @@ Definition negb (b:Bool) : Bool :=
     intros b. (*b is just an arbitrary value *)
     destruct b. (* We are doing case analysis on b *)
     + simpl. reflexivity. (* We are simplifying the goal and then using reflexivity to prove it *)
-    +simple. reflexivity.
+    +simpl. reflexivity.
+Qed.
+
+(* Proving something which is false*)
+Theorem i_believe_its_true : forall (b: Bool), negb b = b.
+Proof.
+    intros b.
+    destruct b.
+    + simpl.
 Qed.
