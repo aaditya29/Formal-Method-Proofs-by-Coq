@@ -24,10 +24,25 @@ Definition negb (b:Bool) : Bool :=
     +simpl. reflexivity.
 Qed.
 
-(* Proving something which is false*)
-Theorem i_believe_its_true : forall (b: Bool), negb b = b.
+
+(*Defining another definition*)
+Definition andb ( b1 b2 : Bool) : Bool :=
+    match b1, b2 with
+    | true, true => true
+    | _, _ => false
+    end.
+
+(* Proof of returning statement when both are true else false*)
+Theorem andb_true_both_arg_true : forall (b1 b2 : Bool),
+    b1 = true -> b2 = true -> andb b1 b2 = true.
 Proof.
-    intros b.
-    destruct b.
-    + simpl.
+    intros b1 b2 Hb1 Hb2.
+    destruct b1.
+    destruct b2.
+    + simpl. reflexivity.
+    + simpl. inversion Hb2.
+    + destruct b2.
+        ++ simpl. inversion Hb1.
+        ++ simpl. inversion Hb1.
 Qed.
+
