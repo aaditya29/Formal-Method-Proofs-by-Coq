@@ -46,3 +46,18 @@ Proof.
         ++ simpl. inversion Hb1.
 Qed.
 
+Theorem andb_true_otherside : forall (b1 b2: Bool),
+    andb  b1 b2 = true -> b1 = true /\ b2 = true.
+Proof.
+    intros b1 b2 Hb.
+    destruct b1.
+    destruct b2.
+    split. reflexivity.
+    reflexivity.
+    inversion Hb.
+    destruct b2.
+    simpl in Hb.
+    inversion Hb.
+    simpl in Hb.
+    inversion Hb.
+Qed.
