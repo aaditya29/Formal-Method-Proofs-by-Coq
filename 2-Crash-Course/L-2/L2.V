@@ -61,3 +61,5 @@ Proof.
     simpl in Hb.
     inversion Hb.
 Qed.
+
+(* Proving AND is associative*)
