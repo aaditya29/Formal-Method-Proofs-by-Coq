@@ -63,3 +63,5 @@ Proof.
 Qed.
 
 (* Proving AND is associative*)
+Theorem andb_assoc : forall (b1 b2 b3 : Bool),
+    andb b1 (andb b2 b3) = andb (andb b1 b2) b3.
