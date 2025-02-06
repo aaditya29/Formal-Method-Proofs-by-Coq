@@ -62,4 +62,9 @@ Proof.
     inversion Hb.
 Qed.
 
-(* Proving AND is associative*)
+(* Properties of AND*)
+(** Proving AND is associative i.e. andb (and a b) c = andb a (and b c)
+    commutative: andb a b = andb b a
+    Distributivity of and over or:
+    andb a (orb b c) = orb (andb a b) (andb a c)
+    negb (andb a b) = orb (negb a) (negb b)*)
