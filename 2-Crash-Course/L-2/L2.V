@@ -76,8 +76,6 @@ Proof.
     intros [|] [|] [|]; simpl.
     reflexivity.
 Qed.
-
-
 (**    intros a b c.
     destruct a.
     destruct b.
@@ -93,3 +91,5 @@ Qed.
     destruct c. simpl.
     reflexivity.
     simpl. reflexivity.*)
+
+Theorem andb_commutative : forall (a b : Bool)
