@@ -73,7 +73,12 @@ Theorem andb_associative : forall (a b cn: Bool),
     andb a (andb b c) = andb (andb a b) c.
 
 Proof.
-    intros a b c.
+    intros [|] [|] [|]; simpl.
+    reflexivity.
+Qed.
+
+
+(**    intros a b c.
     destruct a.
     destruct b.
     destruct c.
@@ -87,4 +92,4 @@ Proof.
     simpl. reflexivity.
     destruct c. simpl.
     reflexivity.
-    simpl. reflexivity.
+    simpl. reflexivity.*)
