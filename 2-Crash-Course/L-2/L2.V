@@ -63,21 +63,3 @@ Proof.
 Qed.
 
 (* Proving AND is associative*)
-Theorem andb_assoc : forall (b1 b2 b3 : Bool),
-    andb b1 (andb b2 b3) = andb (andb b1 b2) b3.
-
-Proof. 
-    intros b1 b2 b3.
-    destruct b1.
-    destruct b2.
-    destruct b3.
-    simpl. reflexivity.
-    simpl. reflexivity.
-    simpl. reflexivity.
-    simpl. reflexivity.
-    destruct b2.
-    destruct b3.
-    simpl. reflexivity.
-    simpl. reflexivity.
-    simpl. reflexivity.
-    simpl. reflexivity.
