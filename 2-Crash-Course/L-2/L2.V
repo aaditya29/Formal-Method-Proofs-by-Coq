@@ -68,3 +68,23 @@ Qed.
     Distributivity of and over or:
     andb a (orb b c) = orb (andb a b) (andb a c)
     negb (andb a b) = orb (negb a) (negb b)*)
+
+Theorem andb_associative : forall (a b cn: Bool),
+    andb a (andb b c) = andb (andb a b) c.
+
+Proof.
+    intros a b c.
+    destruct a.
+    destruct b.
+    destruct c.
+    simpl. reflexivity.
+    destruct c.
+    simpl. reflexivity.
+    simpl. reflexivity.
+    destruct b.
+    destruct c.
+    simpl. reflexivity.
+    simpl. reflexivity.
+    destruct c. simpl.
+    reflexivity.
+    simpl. reflexivity.
