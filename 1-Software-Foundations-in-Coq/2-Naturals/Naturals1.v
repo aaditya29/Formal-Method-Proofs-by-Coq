@@ -95,8 +95,9 @@ Inductive N: Type :=
 
 Definition pred (n : N) : N :=
     match n with
-    | 0 => 0(* predecessor of 0 is 0*)
+    | O => O(* predecessor of 0 is 0*)
     | S n' => n' (* predecessor of S n' is n'*)
     end.
 End NatPlayground.
 
+Check (S (S (S O))).
