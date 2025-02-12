@@ -91,5 +91,3 @@ Qed.
     destruct c. simpl.
     reflexivity.
     simpl. reflexivity.*)
-
-Theorem andb_commutative : forall (a b : Bool)
