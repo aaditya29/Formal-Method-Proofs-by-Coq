@@ -69,7 +69,7 @@ Qed.
     andb a (orb b c) = orb (andb a b) (andb a c)
     negb (andb a b) = orb (negb a) (negb b)*)
 
-Theorem andb_associative : forall (a b cn: Bool),
+Theorem andb_associative : forall (a b c: Bool),
     andb a (andb b c) = andb (andb a b) c.
 
 Proof.
@@ -91,3 +91,14 @@ Qed.
     destruct c. simpl.
     reflexivity.
     simpl. reflexivity.*)
+
+Theorem andb_commutative : forall a b, and a b = and b a.
+Proof.
+    intros a b.
+    destruct a.
+    destruct b.
+    simpl. reflexivity.
+    simpl. reflexivity.
+    destruct b.
+    simpl. reflexivity.
+Qed.
