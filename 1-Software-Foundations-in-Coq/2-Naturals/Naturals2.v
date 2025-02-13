@@ -35,3 +35,10 @@ Fixpoint mul (m n: nat) : nat :=
     | S n' => plus m (mul m n')
     end.
 
+(* Subtracting two numbers*)
+Fixpoint minus (m n : nat) : nat :=
+    match n, m with
+    | O, _ => O
+    | S _, O => n
+    | S n', S m' => minus n' m'
+    end.
