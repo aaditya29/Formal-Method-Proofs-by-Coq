@@ -10,3 +10,12 @@ Proof.
     rewrite -> H. (*rewriting the goal*)
     reflexivity.
 Qed.
+
+Theorem mult_n_0_m_0 : forall n m : nat,
+    (n * 0) + (m * 0) = 0.
+Proof.
+    intros n m.
+    rewrite <- mult_n_0. (*rewriting the goal*)
+    rewrite <- mult_n_0. (*rewriting the goal*)
+    reflexivity.
+Qed.
