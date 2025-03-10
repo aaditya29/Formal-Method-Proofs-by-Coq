@@ -16,3 +16,15 @@ Inductive nat : Type :=
 
 *)
 
+
+(* Example with Bool*)
+
+Theorem bool_destruct : forall b: bool,
+    b = true \/ b = false. (* for any boolean b, b is either true or false.*)
+Proof.
+  intros b.
+  destruct b.
+  - left. reflexivity.
+  - right. reflexivity.
+
+Qed.
