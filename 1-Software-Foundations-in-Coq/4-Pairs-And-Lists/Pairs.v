@@ -12,4 +12,17 @@ Definition my_pair_type' := (nat * bool)%type.
 
 (*Creating Pair Values*)
 Definition my_pair : nat * bool := (3, true).
-Definition my_pair' := pair nat bool 3 true. (* Explicit way to define constructor*)
+Definition my_pair' := @pair nat bool 3 true. (* Explicit way to define constructor*)
+
+Check pair.
+
+Check fst. (*Used to extract the first component.*)
+
+Check snd. (*extracts the second component*)
+
+(* PATTERN MATCHING WITH PAIRS*)
+
+Definition swap {A B : Type} (p : A * B) : B * A :=
+    match p with
+    | (a, b) => (b, a)
+    end.
