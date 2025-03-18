@@ -1,5 +1,8 @@
 (* Defining a list*)
 
+Require Import Coq.Lists.List.
+Import ListNotations.
+
 (** We define the list using Inductive keyword.
 In Coq, the Inductive keyword is used to define inductive types. Inductive types are a fundamental concept in Coq, allowing you to define new data types by specifying their constructors. These types can be used to represent various kinds of data structures, such as natural numbers, lists, trees, and more. *)
 
@@ -11,3 +14,4 @@ Inductive list (A : Type) : Type :=
 (* cons h t reperesents a list where 
 - h is the first element and t is the rest of the list*)
 
+Compute (1 :: 2 :: 3 :: @Datatypes.nil nat).
