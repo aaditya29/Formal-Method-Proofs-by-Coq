@@ -15,3 +15,16 @@ Inductive list (A : Type) : Type :=
 - h is the first element and t is the rest of the list*)
 
 Compute (1 :: 2 :: 3 :: @Datatypes.nil nat).
+(* here in output 1 is the head and 2,3 are tail*)
+
+
+
+(* Extracting the head of a List*)
+
+(* The hd function retreives the first element of a list with default value for empty lists*)
+
+Fixpoint hd { A: Type } (default : A) (l: list A) : A :=
+    match l with
+    | nil => default
+    | cons h _ => h
+    end.
